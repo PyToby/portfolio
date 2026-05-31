@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/static.css">
+  <link rel="stylesheet" href="/website/static/static.css">
   
 </head>
 <body>
@@ -112,20 +112,94 @@
  
   <!-- Skills -->
   <section id="skills">
-    <div class="section-header reveal">
-      <span class="section-num">03</span>
-      <span class="section-title">skills</span>
-      <div class="section-line"></div>
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <span class="section-title">skills & certifications</span>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="skills-grid reveal">
+    <div class="skill-item"><span class="skill-dot"></span>Python</div>
+    <div class="skill-item"><span class="skill-dot"></span>Flask</div>
+    <div class="skill-item"><span class="skill-dot"></span>Tailwind CSS</div>
+    <div class="skill-item"><span class="skill-dot"></span>Git</div>
+    <div class="skill-item" style="grid-column: span 2;"><span class="skill-dot"></span>Currently Learning TypeScript</div>
+    <div class="skill-item" style="grid-column: span 2;"><span class="skill-dot"></span>Cybersecurity basics</div>
+  </div>
+
+  <div class="cert-grid reveal" id="certGrid">
+
+    <div class="cert-card" data-cert="0">
+      <img class="cert-thumb" src="/website/media/google_ai_essentials.png" alt="" />
+      <div class="cert-info">
+        <p class="cert-name">Google AI Essentials</p>
+        <p class="cert-hint">// click to expand</p>
+      </div>
     </div>
-    <div class="skills-grid">
-      <div class="skill-item"><span class="skill-dot"></span>Python</div>
-      <div class="skill-item"><span class="skill-dot"></span>Flask</div>
-      <div class="skill-item"><span class="skill-dot"></span>Tailwind CSS</div>
-      <div class="skill-item"><span class="skill-dot"></span>Git</div>
-      <div class="skill-item" style="grid-column: span 2;"><span class="skill-dot"></span>Currently Learning TypeScript</div>
-      <div class="skill-item" style="grid-column: span 2;"><span class="skill-dot"></span>Cybersecurity basics</div>
+
+    <div class="cert-card" data-cert="1">
+      <img class="cert-thumb" src="thumb.jpg" alt="" />
+      <div class="cert-info">
+        <p class="cert-name">Course / Event Name</p>
+        <p class="cert-hint">// click to expand</p>
+      </div>
     </div>
-  </section>
+
+    <div class="cert-card" data-cert="2">
+      <img class="cert-thumb" src="thumb.jpg" alt="" />
+      <div class="cert-info">
+        <p class="cert-name">Course / Event Name</p>
+        <p class="cert-hint">// click to expand</p>
+      </div>
+    </div>
+
+    <div class="cert-card" data-cert="3">
+      <img class="cert-thumb" src="thumb.jpg" alt="" />
+      <div class="cert-info">
+        <p class="cert-name">Course / Event Name</p>
+        <p class="cert-hint">// click to expand</p>
+      </div>
+    </div>
+
+    <!-- cards beyond the first 4 start hidden -->
+    <div class="cert-card cert-hidden" data-cert="4">
+      <img class="cert-thumb" src="thumb.jpg" alt="" />
+      <div class="cert-info">
+        <p class="cert-name">Course / Event Name</p>
+        <p class="cert-hint">// click to expand</p>
+      </div>
+    </div>
+
+    <div class="cert-card cert-hidden" data-cert="5">
+      <img class="cert-thumb" src="thumb.jpg" alt="" />
+      <div class="cert-info">
+        <p class="cert-name">Course / Event Name</p>
+        <p class="cert-hint">// click to expand</p>
+      </div>
+    </div>
+
+
+  <button class="cert-show-more" id="certShowMore">// show all certifications ↓</button>
+
+      
+  </div>
+</section>
+
+<div class="cert-overlay" id="certOverlay" role="dialog" aria-modal="true">
+  <div class="cert-backdrop" id="certBackdrop"></div>
+  <div class="cert-modal" id="certModal">
+    <button class="cert-close" id="certClose" aria-label="Close">✕</button>
+    <img class="cert-modal-thumb" id="certModalThumb" src="" alt="" />
+    <div class="cert-modal-body">
+      <p class="cert-modal-title" id="certModalTitle"></p>
+      <p class="cert-modal-issuer" id="certModalIssuer"></p>
+      <div class="cert-modal-divider"></div>
+      <p class="cert-modal-desc" id="certModalDesc"></p>
+      <p class="cert-modal-cert-label">// certificate</p>
+      <img class="cert-modal-cert-img" id="certModalCertImg" src="" alt="Certificate" />
+    </div>
+  </div>
+</div>
  
   <!-- Contact -->
   <section id="contact">
@@ -227,6 +301,67 @@
  
   const skillGrid = document.querySelector('.skills-grid');
   if (skillGrid) skillObserver.observe(skillGrid);
+
+  // ── Certifications data ──
+const certs = [
+  {
+    name:    "Google AI Essentials",
+    issuer:  "Google · 2026",
+    thumb:   "/website/media/google_ai_essentials.png",
+    certImg: "cert.jpg",
+    desc:    "What you learned or why this mattered."
+  },
+  
+  // ... one object per card, matching data-cert index
+];
+
+// ── Show more ──
+const showMoreBtn = document.getElementById('certShowMore');
+showMoreBtn.addEventListener('click', () => {
+  const hidden = document.querySelectorAll('.cert-card.cert-hidden');
+  hidden.forEach((card, i) => {
+    card.classList.remove('cert-hidden');
+    // stagger the reveal — each pair of cards 60ms apart
+    setTimeout(() => card.classList.add('cert-visible'), i * 60);
+  });
+  // move button to end and hide it
+  showMoreBtn.style.transition = 'opacity 200ms ease';
+  showMoreBtn.style.opacity = '0';
+  setTimeout(() => showMoreBtn.remove(), 200);
+});
+
+// ── Modal ──
+const overlay  = document.getElementById('certOverlay');
+const backdrop = document.getElementById('certBackdrop');
+const closeBtn = document.getElementById('certClose');
+
+function openCert(index) {
+  const c = certs[index];
+  document.getElementById('certModalThumb').src            = c.thumb;
+  document.getElementById('certModalThumb').alt            = c.name;
+  document.getElementById('certModalTitle').textContent    = c.name;
+  document.getElementById('certModalIssuer').textContent   = c.issuer;
+  document.getElementById('certModalDesc').textContent     = c.desc;
+  document.getElementById('certModalCertImg').src          = c.certImg;
+  document.getElementById('certModalCertImg').alt          = c.name + ' certificate';
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeCert() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('certGrid').addEventListener('click', e => {
+  const card = e.target.closest('.cert-card');
+  if (card) openCert(+card.dataset.cert);
+});
+
+closeBtn.addEventListener('click', closeCert);
+backdrop.addEventListener('click', closeCert);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCert(); });
+
 </script>
  
 </body>
