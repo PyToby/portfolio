@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/static.css">
+  <link rel="stylesheet" href="static/static.css">
   
 </head>
 <body>
@@ -141,15 +141,15 @@
   <div class="cert-grid reveal" id="certGrid">
 
     <div class="cert-card" data-cert="0">
-      <img class="cert-thumb" src="/media/google_ai_essentials.png" alt="AI Essentials course logo" />
+      <img class="cert-thumb" src="media/github-foundations.jpeg" alt="Github Foundation logo" />
       <div class="cert-info">
-        <p class="cert-name">Google AI Essentials</p>
+        <p class="cert-name">Github Foundations</p>
         <p class="cert-hint">// click to expand</p>
       </div>
     </div>
 
     <div class="cert-card" data-cert="1">
-      <img class="cert-thumb" src="/media/tryhackme.avif" alt="TryHackMe logo" />
+      <img class="cert-thumb" src="media/tryhackme.avif" alt="TryHackMe logo" />
       <div class="cert-info">
         <p class="cert-name">TryHackMe Presecurity path</p>
         <p class="cert-hint">// click to expand</p>
@@ -186,7 +186,8 @@
       <div class="section-line"></div>
     </div>
     <p class="reveal" style="font-size:14px; color: var(--text-2); margin-bottom: 24px; max-width: 490px; line-height: 1.8;">
-      I'm always open to interesting projects and <span class="about-highlight">part time job oppurtunities!</span>
+      I'm always open to interesting projects and <span class="about-highlight">part time jobs!</span>
+      I am primarily looking for oppurtunities which would advance my skills and experience and develop my current knowledge.
     </p>
     <div class="contact-row reveal">
       <a href="https://github.com/yourusername" class="contact-link" target="_blank">
@@ -282,20 +283,19 @@
   // ── Certifications data ──
 const certs = [
   {
-    name:    "Google AI Essentials",
-    issuer:  "Google · 2026",
-    thumb:   "/media/google_ai_essentials.png",
+    name:    "Github Foundations",
+    issuer:  "Github · 2026",
+    thumb:   "media/github-foundations.jpeg",
     certImg: "cert.jpg",
-    desc:    "What you learned or why this mattered."
+    desc:    "By finishing this course I have gained the nessecary skills to operate with git in the console and in code editors such as VSCode. I have learned about how does Github itself function and how to utilize it to its maximum."
   }, {
     name:    "Presecurity Path",
     issuer:  "TryHackMe · 2025",
-    thumb:   "/media/tryhackme.avif",
-    certImg: "/media/presecurity-cert.jpg",
+    thumb:   "media/tryhackme.avif",
+    certImg: "media/presecurity-cert.jpg",
     desc:    "Through this long course I learned the basics of cybersecurity. Different protocols (UDP, TCP, SSH, FTP...) or for example how the OSI or TCP/IP model works, what are packets and frames and how they function. This path has also taught me about DNS, different record types or about HTTP while explaing everything in great detail. "
   },
   
-  // ... one object per card, matching data-cert index
 ];
 
 // ── Show more ──
