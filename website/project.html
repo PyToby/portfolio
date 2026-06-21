@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/static/project.css"">
+  <link rel="stylesheet" href="static/project.css"">
 </head>
 <body>
 
@@ -82,13 +82,22 @@
     </div>
     <div class="prose">
       <p>
-        [Describe what Wherelse is and what it does. 2–3 paragraphs. Talk about the problem you were solving, who it's for, and what it does at a high level.]
+        When I was brainstorming different project ideas, my mind stumbled upon this specific one. I didn't know about many sites offering this functionality while being actually useful.
       </p>
       <p>
-        The project is built collaboratively with a friend. We designed the architecture together, settling on a <strong>normalized two-table schema</strong> (User + Item with a foreign key relationship) to properly support Flask-Login and Google OAuth — a deliberate decision that kept the database clean and extensible.
+        <strong>Wherelse</strong> - because "Where else would you look" - is a webapp letting users compare any two services/Saas. Its practicality lies in the information the user recieves ranging from <strong>feature overviews, usecase demonstrations to user reviews</strong>.
       </p>
       <p>
-        [Add any other context — what was the biggest design decision, what makes this project interesting to you personally.]
+        Under the hood a simple yet effective <strong>web scraping system</strong> is designed to obtain the most relative information (such as reviews or recommendations). An AI model then synthesises the information into a structured comparison while using as little of its own information as possible. This prevents AI hallucinations and guarantees authenticity and factuality to the result.
+      </p>
+      <p>
+        To ensure cost-effectivness the backend <strong>saves already generated comparisons</strong> into the app's database to avoid repeating the same user requests. To expand on this, the app utilizes <stron>threading</strong> and keeps track of ongoing generations so multiple users could benefit from the same AI API call. This further <strong>reduces repetitions</strong> and in the long run the <strong>costs of token usage</strong>.
+      </p>
+      <p>
+        Since I mainly focus on backend, I worked with Claude to achieve a satisfying frontend.
+      </p>
+      <p>
+        <i>Currently this app is hosted on Render and due to cost limitations, the server spins down with inactivity. Please wait for about 50 seconds until the server and the app itself wakes up.</i>
       </p>
     </div>
   </section>
@@ -106,7 +115,7 @@
         <p class="stack-role">Backend framework, routing, auth</p>
       </div>
       <div class="stack-card">
-        <p class="stack-name">Tailwind CSS / Daisy.UI</p>
+        <p class="stack-name">Tailwind CSS / Daisy.UI (in colab. with Claude)</p>
         <p class="stack-role">Utility-first styling pipeline</p>
       </div>
       <div class="stack-card">
