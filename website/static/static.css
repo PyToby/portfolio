@@ -560,6 +560,7 @@ footer {
 
 /* show more button */
 .cert-show-more {
+  display: none;  
   grid-column: span 2;
   font-family: var(--mono);
   font-size: 12px;
