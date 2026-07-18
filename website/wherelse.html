@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wherelse — Toby</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="static/project.css"">
+</head>
+<body>
+
+<canvas id="binary-canvas"></canvas>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">toby<span>.dev</span></a>
+    <a href="index.html" class="nav-back">← back to homepage</a>
+  </div>
+</nav>
+
+<div class="wrapper">
+
+  <!-- Project hero -->
+  <div class="project-hero">
+    <p class="breadcrumb fade-in">
+      <a href="index.html">projects</a>
+      <span>/</span>
+      wherelse
+    </p>
+    <h1 class="project-title fade-in">Wherelse</h1>
+    <p class="project-tagline fade-in">
+      Because Where else would you look? 
+    </p>
+    <div class="project-meta fade-in">
+      <div class="meta-item">
+        <span class="meta-label">status</span>
+        <span class="meta-value">in development</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">year</span>
+        <span class="meta-value">2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">type</span>
+        <span class="meta-value">web app · AI integration</span>
+      </div>
+    </div>
+    <div class="project-actions fade-in">
+      <a href="https://wherelse.onrender.com" class="btn btn-primary" target="_blank">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        live demo
+      </a>
+      <a href="https://github.com/PyToby/project-wherelse" class="btn btn-secondary" target="_blank">
+        <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        view source
+      </a>
+    </div>
+  </div>
+
+  <!-- Screenshot -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">preview</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="screenshot-box">
+      <span> <img src="https://raw.githubusercontent.com/PyToby/project-wherelse/main/assets/homepage.png" 
+        alt="// preview of homepage"
+        style="width: 100%; display: block;"></span>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">overview</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="prose">
+      <p>
+        When I was brainstorming different project ideas, my mind stumbled upon this specific one. I didn't know about many sites offering this functionality while being actually useful.
+      </p>
+      <p>
+        <strong>Wherelse</strong> - because "Where else would you look" - is a webapp letting users compare any two services/Saas. Its practicality lies in the information the user recieves ranging from <strong>feature overviews, usecase demonstrations to user reviews</strong>.
+      </p>
+      <p>
+        Under the hood a simple yet effective <strong>web scraping system</strong> is designed to obtain the most relative information (such as reviews or recommendations). An AI model then synthesises the information into a structured comparison while using as little of its own information as possible. This prevents AI hallucinations and guarantees authenticity and factuality to the result.
+      </p>
+      <p>
+        To ensure cost-effectivness the backend <strong>saves already generated comparisons</strong> into the app's database to avoid repeating the same user requests. To expand on this, the app utilizes <stron>threading</strong> and keeps track of ongoing generations so multiple users could benefit from the same AI API call. This further <strong>reduces repetitions</strong> and in the long run the <strong>costs of token usage</strong>.
+      </p>
+      <p>
+        Since I mainly focus on backend, I worked with Claude to achieve a satisfying frontend.
+      </p>
+      <p>
+        <i>Currently this app is hosted on Render and due to cost limitations, the server spins down with inactivity. Please wait for about 50 seconds until the server and the app itself wakes up.</i>
+      </p>
+    </div>
+  </section>
+
+  <!-- Tech stack -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">tech stack</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-card">
+        <p class="stack-name">Python / Flask</p>
+        <p class="stack-role">Backend framework, routing, auth</p>
+      </div>
+      <div class="stack-card">
+        <p class="stack-name">Tailwind CSS / Daisy.UI (in colab. with Claude)</p>
+        <p class="stack-role">Utility-first styling pipeline</p>
+      </div>
+      <div class="stack-card">
+        <p class="stack-name">PostgreSQL / Supabase</p>
+        <p class="stack-role">Database</p>
+      </div>
+      <div class="stack-card">
+        <p class="stack-name">Google Gemini API</p>
+        <p class="stack-role">AI api</p>
+      </div>
+      <div class="stack-card">
+        <p class="stack-name">Google OAuth</p>
+        <p class="stack-role">Third-party authentication</p>
+      </div>
+      <div class="stack-card">
+        <p class="stack-name">Render</p>
+        <p class="stack-role">Hosting & deployment</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges -->
+  <section>
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">challenges & what i learned</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="challenge-list">
+      <div class="challenge-item">
+        <p class="challenge-title">Building a web app from the ground up!</p>
+        
+      </div>
+      <div class="challenge-item">
+        <p class="challenge-title">AI API Integration</p>
+        <p class="challenge-body">
+          My main goal for this project, besides building an app from 0, was to grasp the concept of working with an AI model. I learned API calling and AI web scraping.
+        </p>
+      </div>
+      <div class="challenge-item">
+        <p class="challenge-title">Threading</p>
+        <p class="challenge-body">
+          In the process of building Wherelse I stumbled upon a simple yet new problem of loading screens. For this reason, I had to learn the use of threading to sideline a process and in the meantime display a loading screen.
+        </p>
+      </div>
+      <div class="challenge-item">
+        <p class="challenge-title">Efficent token usage</p>
+        <p class="challenge-body">
+          Wherelse uses a system where if several users enter the same query simultaneously, the backend calls the AI only <span class="about-highlight">once</span> resulting in smaller token usage. In addition, Wherelse saves already processed comparisons into its database and later on retrieves them from there.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">What to add</span>
+      <div class="section-line"></div>
+    </div>
+    <div class="challenge-list">
+      <div class="challenge-item">
+        <p class="challenge-title">SQL Injection handling</p>
+        
+      </div>
+      <div class="challenge-item">
+        <p class="challenge-title">Ratelimitting</p>
+      </div>
+      <div class="challenge-item">
+        <p class="challenge-title">Comparison expiring</p>
+        <p class="challenge-body">
+          Wherelse saves comparisons to its database, however they can get outdated pretty quickly. Every month the app will check the date of creation of every comparison to delete the ones over 2 months old.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!--  <code style="font-family: var(--mono); font-size: 12px; color: var(--text-2);"></code>  -->
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-text">// wherelse · Tobias Radkovský · 2026</span>
+    <a href="index.html" style="font-family: var(--mono); font-size: 11px; color: var(--text-3); text-decoration: none; letter-spacing: 0.06em;">← back</a>
+  </div>
+</footer>
+
+<script>
+  const canvas = document.getElementById('binary-canvas');
+  const ctx = canvas.getContext('2d');
+  let cols, drops, fontSize;
+
+  function resize() {
+    canvas.width  = window.innerWidth;
+    canvas.height = window.innerHeight;
+    fontSize = 13;
+    cols = Math.floor(canvas.width / (fontSize * 0.65));
+    drops = Array.from({ length: cols }, () => Math.random() * -100);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
+    for (let i = 0; i < drops.length; i++) {
+      const bit = Math.random() > 0.5 ? '1' : '0';
+      const x = i * (fontSize * 0.65);
+      const y = drops[i] * fontSize;
+      const alpha = 0.15 + Math.random() * 0.25;
+      ctx.fillStyle = `rgba(180, 180, 180, ${alpha})`;
+      ctx.fillText(bit, x, y);
+      if (y > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i] += 0.4 + Math.random() * 0.3;
+    }
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+  setInterval(draw, 55);
+</script>
+
+</body>
+</html>
