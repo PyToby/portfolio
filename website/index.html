@@ -3,364 +3,477 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tobias Radkovský — Portfolio</title>
+  <meta name="theme-color" content="#050807" />
+  <title>toby@portfolio:~$ — Tobias Radkovský</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="static/static.css">
-  
+  <link rel="stylesheet" href="static/style.css" />
+  <noscript>
+    <style>
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .hero-fade { opacity: 1 !important; animation: none !important; }
+      .log-line { color: var(--text-2) !important; }
+    </style>
+  </noscript>
 </head>
 <body>
- 
-<canvas id="binary-canvas"></canvas>
- 
+
+<canvas id="matrix" aria-hidden="true"></canvas>
+<div class="crt" aria-hidden="true"></div>
+<div class="crt-sweep" aria-hidden="true"></div>
+
+<!-- ── Boot sequence ── -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-box">
+    <div id="boot-log"></div>
+    <div class="boot-bar"><div class="boot-fill"></div></div>
+  </div>
+</div>
+
+<!-- ── Nav ── -->
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">toby<span>.dev</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">about</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#skills">skills</a></li>
-      <li><a href="#contact">contact</a></li>
-    </ul>
+    <a href="index.html" class="nav-logo"><span class="prompt">toby</span><span class="dim">@portfolio</span><span class="dim">:~$</span></a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="#about">01_about</a></li>
+        <li><a href="#projects">02_projects</a></li>
+        <li><a href="#skills">03_skills</a></li>
+        <li><a href="#contact">04_contact</a></li>
+      </ul>
+      <span class="nav-clock">[ <b>UTC+2</b> <span data-clock>--:--:--</span> ]</span>
+    </div>
   </div>
 </nav>
- 
+
 <div class="wrapper">
- 
-  <!-- Hero -->
-  <section id="hero" style="border-top: none;">
-    <p class="hero-tag fade-in">// available for opportunities</p>
-    <h1 class="hero-name fade-in cursor">Tobias Radkovský</h1>
-    <p class="hero-role fade-in">Student developer <span>/</span> Prague, CZ</p>
-    <p class="hero-bio fade-in">
-      I build things that interest me. From experimenting with AI powered web apps to trying coding MLs from scratch.
-      I prefer understanding how things work from the ground up over using black-box solutions.
+
+  <!-- ================= HERO ================= -->
+  <section id="hero">
+    <div class="hero-log" aria-label="terminal session log">
+      <p class="log-line cmd" data-type="$ whoami">$ whoami</p>
+      <p class="log-line out" data-type="tobias radkovský — student developer">tobias radkovský — student developer</p>
+      <p class="log-line cmd" data-type="$ pwd">$ pwd</p>
+      <p class="log-line out" data-type="/prague/cz">/prague/cz</p>
+      <p class="log-line cmd" data-type="$ date">$ date</p>
+      <p class="log-line out date-line" data-date>&nbsp;</p>
+      <p class="log-line cmd" data-type="$ ./init --name">$ ./init --name</p>
+    </div>
+
+    <h1 class="hero-name glitch hero-fade" data-text="Tobias Radkovský">Tobias Radkovský</h1>
+    <p class="hero-role hero-fade">student developer <span class="sep">/</span> prague, cz <span class="status-dot" title="available for opportunities"></span></p>
+    <p class="hero-bio hero-fade">
+      I build things that interest me. From experimenting with AI powered web apps to trying coding <span class="hl">MLs from scratch</span>.
+      I prefer understanding how things work <span class="hl">from the ground up</span> over using black-box solutions.
     </p>
-    <div class="hero-links fade-in">
-      <a href="https://github.com/PyToby" class="hero-link" target="_blank">
+
+    <div class="hero-links hero-fade">
+      <a href="https://github.com/PyToby" class="btn btn-solid" target="_blank" rel="noopener">
         <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub
+        github/PyToby
       </a>
-      <a href="mailto:toby.radkovsky@gmail.com" class="hero-link">
+      <a href="mailto:toby.radkovsky@gmail.com" class="btn btn-ghost">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-        Email
+        mail --to
       </a>
-      <!--<a href="cv.pdf" class="hero-link" target="_blank">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-        CV
-      </a>-->
+    </div>
+
+    <div class="sys-grid hero-fade">
+      <div class="sys-item"><span class="sys-label">status</span><span class="sys-val"><span class="ok">● available</span> for opportunities</span></div>
+      <div class="sys-item"><span class="sys-label">uptime</span><span class="sys-val" data-uptime>00:00:00</span></div>
+      <div class="sys-item"><span class="sys-label">location</span><span class="sys-val">prague, cz</span></div>
+      <div class="sys-item"><span class="sys-label">time</span><span class="sys-val" data-clock data-clock-full>--:--:-- UTC+2</span></div>
     </div>
   </section>
- 
-  <!-- About -->
-  <section id="about">
-    <div class="section-header reveal">
-      <span class="section-num">01</span>
-      <span class="section-title">about</span>
-      <div class="section-line"></div>
+
+  <!-- ================= TICKER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-set">
+        <span>python</span><i>//</i><span>flask</span><i>//</i><span>tailwind css</span><i>//</i><span>typescript</span><i>//</i><span>hono</span><i>//</i><span>cloudflare workers</span><i>//</i><span>git</span><i>//</i><span>sqlite</span><i>//</i><span>cybersecurity</span><i>//</i><span>gemini api</span><i>//</i><span>supabase</span><i>//</i><span>linux</span><i>//</i>
+      </div>
+      <div class="ticker-set">
+        <span>python</span><i>//</i><span>flask</span><i>//</i><span>tailwind css</span><i>//</i><span>typescript</span><i>//</i><span>hono</span><i>//</i><span>cloudflare workers</span><i>//</i><span>git</span><i>//</i><span>sqlite</span><i>//</i><span>cybersecurity</span><i>//</i><span>gemini api</span><i>//</i><span>supabase</span><i>//</i><span>linux</span><i>//</i>
+      </div>
     </div>
-    <div class="about-grid reveal">
+  </div>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="sec-header" data-reveal>
+      <span class="sec-num">[01]</span>
+      <span class="sec-cmd" data-cmd="cat about.txt"></span>
+      <span class="sec-cursor" aria-hidden="true"></span>
+      <div class="sec-line"></div>
+    </div>
+    <p class="sec-sub"># plaintext profile — no bloat</p>
+
+    <div class="about-grid" data-reveal>
       <div class="about-block">
-        <p class="about-block-label">background</p>
-        <p>I have been programming for about 3 years specializing in <span class="about-highlight">Python</span>. I have experience in building backend with a Python library called <span class="about-highlight">Flask</span> as I have participated in multiple projects utilizing it. My experience with frontend frameworks is limited.</p>
-        <p>My current ambitions are learning Typescript as a way to enhance my web development skills and learning the way MLs/neural networks work and how to program them from scratch.</p>
+        <p class="about-label">background</p>
+        <p>I have been programming for about 3 years specializing in <span class="about-hl">Python</span>. I have experience in building backend with a Python library called <span class="about-hl">Flask</span> as I have participated in multiple projects utilizing it. My experience with frontend frameworks is limited.</p>
+        <p>My current ambitions are learning <span class="about-hl">TypeScript</span> as a way to enhance my web development skills and learning the way MLs/neural networks work and how to program them from scratch.</p>
       </div>
       <div class="about-block">
-        <p class="about-block-label">beyond the terminal</p>
-        <p>When I'm not writing code, I do <span class="about-highlight">music</span>. I've been playing classical piano for over 10 years and compose electronic/rock music as a hobby.</p>
+        <p class="about-label">beyond the terminal</p>
+        <p>When I'm not writing code, I do <span class="about-hl">music</span>. I've been playing classical piano for over 10 years and compose electronic/rock music as a hobby.</p>
         <p>I also enjoy singing and producing for multiple rock/metal bands.</p>
         <p>In my free time, I try to challenge myself with learning new math, physics or programming concepts.</p>
       </div>
       <div class="about-block">
-        <p class="about-block-label">languages</p>
-        <li>Czech (Native)</li>
-        <li>English (Fluent, C1)</li>
-        <li>French (A2)</li>
+        <p class="about-label">languages</p>
+        <div class="lang-row"><span class="lang-name">czech</span><span class="lang-lvl">native</span></div>
+        <div class="lang-row"><span class="lang-name">english</span><span class="lang-lvl">fluent · C1</span></div>
+        <div class="lang-row"><span class="lang-name">french</span><span class="lang-lvl">a2</span></div>
       </div>
       <div class="about-block">
-        <p class="about-block-label">education</p>
-        <p>High school and elementary school <span class="about-highlight">New PORG</span> <i>2017 - 2022</i></p>
-        <p><span class="about-highlight">Gymnázium Jana Keplera</span> <i>2022 - present</i></p>
+        <p class="about-label">education</p>
+        <div class="edu-row"><b>New PORG</b><span>2017 – 2022</span></div>
+        <div class="edu-row"><b>Gymnázium Jana Keplera</b><span>2022 – present</span></div>
       </div>
     </div>
   </section>
- 
-  <!-- Projects -->
+
+  <!-- ================= PROJECTS ================= -->
   <section id="projects">
-    <div class="section-header reveal">
-      <span class="section-num">02</span>
-      <span class="section-title">projects</span>
-      <div class="section-line"></div>
+    <div class="sec-header" data-reveal>
+      <span class="sec-num">[02]</span>
+      <span class="sec-cmd" data-cmd="ls ./projects"></span>
+      <span class="sec-cursor" aria-hidden="true"></span>
+      <div class="sec-line"></div>
     </div>
- 
-    <a href="wherelse.html" class="project-card reveal">
-      <div class="project-header">
-        <span class="project-name">Wherelse</span>
-        <span class="project-arrow">↗</span>
-      </div>
-      <p class="project-desc">
-        A full-stack web application built with Flask and Tailwind CSS. Wherelse is a webapp that turns the chaos of online opinions into clean, structured comparisons 
-        with built in Google API and Tavily API integration.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Flask</span>
-        <span class="tag">Tailwind CSS</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">Google OAuth</span>
-        <span class="tag">AI</span>
-        <span class="tag">Internet scraping</span>
+    <p class="sec-sub"># things i have shipped</p>
 
-      </div>
-    </a>
-    
-    <a href="richprinted.html" class="project-card reveal">
-      <div class="project-header">
-        <span class="project-name">Richprinted</span>
-        <span class="project-arrow">↗</span>
-      </div>
-      <p class="project-desc">
-        A drop-in, dependency-light replacement for Python's print() that adds smart type detection, color themes (to be added), and structured, readable output for terminals improving produtivity and understanding of your data.
-      </p>
-      <div class="project-tags">
-        <span class="tag">Python</span>
-        <span class="tag">Published PyPI package</span>
-      </div>
-    </a>
- 
-    <a href="https://github.com/PyToby" class="github-btn" target="_blank">
-      <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-      view more on github
-    </a>
+    <div class="projects-list">
+
+      <!-- Wherelse -->
+      <a href="wherelse.html" class="win project-card card-spot" data-reveal>
+        <div class="win-bar">
+          <span class="win-dots"><span class="win-dot r"></span><span class="win-dot y"></span><span class="win-dot g"></span></span>
+          <span class="win-title">wherelse.py</span>
+          <span class="win-prompt">flask · dev</span>
+        </div>
+        <div class="card-body">
+          <p class="card-cmd">./wherelse.sh <span class="flash">--run --compare "notion vs obsidian"</span></p>
+          <div class="project-header">
+            <h3 class="project-name">Wherelse</h3>
+            <span class="project-arrow">↗</span>
+          </div>
+          <p class="project-desc">
+            A full-stack web application built with Flask and Tailwind CSS. Wherelse is a webapp that turns the chaos of online opinions into clean, structured comparisons
+            with built in Google API and Tavily API integration.
+          </p>
+          <div class="project-tags">
+            <span class="tag">[python]</span>
+            <span class="tag">[flask]</span>
+            <span class="tag">[tailwind css]</span>
+            <span class="tag">[sqlite]</span>
+            <span class="tag">[google oauth]</span>
+            <span class="tag">[ai]</span>
+            <span class="tag">[internet scraping]</span>
+          </div>
+          <p class="card-exit"><span class="ok">✓</span> build: ok · exit 0 · 0 errors</p>
+        </div>
+      </a>
+
+      <!-- Richprinted -->
+      <a href="richprinted.html" class="win project-card card-spot" data-reveal>
+        <div class="win-bar">
+          <span class="win-dots"><span class="win-dot r"></span><span class="win-dot y"></span><span class="win-dot g"></span></span>
+          <span class="win-title">richprinted.py</span>
+          <span class="win-prompt">pypi · v0.x</span>
+        </div>
+        <div class="card-body">
+          <p class="card-cmd">pip install <span class="flash">richprinted</span></p>
+          <div class="project-header">
+            <h3 class="project-name">Richprinted</h3>
+            <span class="project-arrow">↗</span>
+          </div>
+          <p class="project-desc">
+            A drop-in, dependency-light replacement for Python's print() that adds smart type detection, color themes (to be added), and structured, readable output for terminals improving productivity and understanding of your data.
+          </p>
+          <div class="project-tags">
+            <span class="tag">[python]</span>
+            <span class="tag">[published pypi package]</span>
+          </div>
+          <p class="card-exit"><span class="ok">✓</span> published to pypi · exit 0 · 0 errors</p>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="gh-row" data-reveal>
+      <a href="https://github.com/PyToby" class="btn btn-ghost" target="_blank" rel="noopener">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        $ gh repo list pytoby
+      </a>
+    </div>
   </section>
- 
-  <!-- Skills -->
+
+  <!-- ================= SKILLS ================= -->
   <section id="skills">
-  <div class="section-header reveal">
-    <span class="section-num">03</span>
-    <span class="section-title">skills & certifications</span>
-    <div class="section-line"></div>
-  </div>
+    <div class="sec-header" data-reveal>
+      <span class="sec-num">[03]</span>
+      <span class="sec-cmd" data-cmd="pip list --installed"></span>
+      <span class="sec-cursor" aria-hidden="true"></span>
+      <div class="sec-line"></div>
+    </div>
+    <p class="sec-sub"># packages installed on this machine</p>
 
-  <div class="skills-grid reveal">
-    <div class="skill-item"><span class="skill-dot"></span>Python</div>
-    <div class="skill-item"><span class="skill-dot"></span>Flask</div>
-    <div class="skill-item"><span class="skill-dot"></span>Tailwind CSS</div>
-    <div class="skill-item"><span class="skill-dot"></span>Git</div>
-    <div class="skill-item"><span class="skill-dot"></span>Cybersecurity basics</div>
-    <div class="skill-item"><span class="skill-dot"></span>TypeScript</div>
-    <div class="skill-item" style="grid-column: span 2;"><span class="skill-dot"></span>Hono & Cloudflare workers</div>
-  </div>
-
-  <div class="cert-grid reveal" id="certGrid">
-
-    <div class="cert-card" data-cert="0">
-      <img class="cert-thumb" src="media/github-foundations.jpeg" alt="Github Foundation logo" />
-      <div class="cert-info">
-        <p class="cert-name">Github Foundations</p>
-        <p class="cert-hint">// click to expand</p>
-      </div>
+    <div class="skills-grid" data-reveal>
+      <div class="pkg"><span class="pkg-name">python</span><span class="pkg-status installed">installed ✓</span></div>
+      <div class="pkg"><span class="pkg-name">flask</span><span class="pkg-status installed">installed ✓</span></div>
+      <div class="pkg"><span class="pkg-name">tailwind css</span><span class="pkg-status installed">installed ✓</span></div>
+      <div class="pkg"><span class="pkg-name">git</span><span class="pkg-status installed">installed ✓</span></div>
+      <div class="pkg"><span class="pkg-name">cybersecurity basics</span><span class="pkg-status learning">learning…</span></div>
+      <div class="pkg"><span class="pkg-name">typescript</span><span class="pkg-status busy">installing…</span></div>
+      <div class="pkg wide"><span class="pkg-name">hono &amp; cloudflare workers</span><span class="pkg-status installed">installed ✓</span></div>
     </div>
 
-    <div class="cert-card" data-cert="1">
-      <img class="cert-thumb" src="media/tryhackme.avif" alt="TryHackMe logo" />
-      <div class="cert-info">
-        <p class="cert-name">TryHackMe Presecurity path</p>
-        <p class="cert-hint">// click to expand</p>
-      </div>
+    <!-- Certifications -->
+    <div class="sec-header" data-reveal style="margin-top: 56px;">
+      <span class="sec-num">[03.1]</span>
+      <span class="sec-cmd" data-cmd="cat certifications.log"></span>
+      <span class="sec-cursor" aria-hidden="true"></span>
+      <div class="sec-line"></div>
     </div>
+    <p class="sec-sub"># proof of work · click a window to expand</p>
 
-  <button class="cert-show-more" id="certShowMore">// show all certifications ↓</button>
+    <div class="cert-grid" id="certGrid" data-reveal>
+
+      <div class="win cert-card card-spot" data-cert="0" tabindex="0" role="button" aria-label="Open Github Foundations certificate">
+        <div class="win-bar">
+          <span class="win-dots"><span class="win-dot r"></span><span class="win-dot y"></span><span class="win-dot g"></span></span>
+          <span class="win-title">github-foundations.crt</span>
+          <span class="win-prompt">2026</span>
+        </div>
+        <img class="cert-thumb" src="media/github-foundations.jpeg" alt="Github Foundation logo" />
+        <div class="cert-info">
+          <p class="cert-name">Github Foundations</p>
+          <p class="cert-hint">// click to expand</p>
+        </div>
+      </div>
+
+      <div class="win cert-card card-spot" data-cert="1" tabindex="0" role="button" aria-label="Open TryHackMe Presecurity certificate">
+        <div class="win-bar">
+          <span class="win-dots"><span class="win-dot r"></span><span class="win-dot y"></span><span class="win-dot g"></span></span>
+          <span class="win-title">presecurity-path.crt</span>
+          <span class="win-prompt">2025</span>
+        </div>
+        <img class="cert-thumb" src="media/tryhackme.avif" alt="TryHackMe logo" />
+        <div class="cert-info">
+          <p class="cert-name">TryHackMe Presecurity path</p>
+          <p class="cert-hint">// click to expand</p>
+        </div>
+      </div>
 
       
-  </div>
-</section>
 
-<div class="cert-overlay" id="certOverlay" role="dialog" aria-modal="true">
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="sec-header" data-reveal>
+      <span class="sec-num">[04]</span>
+      <span class="sec-cmd" data-cmd="open channel --to toby"></span>
+      <span class="sec-cursor" aria-hidden="true"></span>
+      <div class="sec-line"></div>
+    </div>
+    <p class="sec-sub"># end of transmission — over to you</p>
+
+    <p class="contact-intro" data-reveal>
+      I'm always open to interesting projects and <span class="hl">part time jobs!</span>
+      I am primarily looking for opportunities which would advance my skills and experience and develop my current knowledge.
+    </p>
+
+    <div class="contact-row" data-reveal>
+      <a href="https://github.com/PyToby" class="btn btn-ghost" target="_blank" rel="noopener">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        git clone github.com/PyToby
+      </a>
+      <a href="mailto:toby.radkovsky@gmail.com" class="btn btn-ghost">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        <span class="btn-label">mail --to toby.radkovsky@gmail.com</span>
+      </a>
+      <button class="btn btn-ghost" id="copy-mail" type="button" aria-label="Copy email address">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75"/></svg>
+        copy
+      </button>
+    </div>
+  </section>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-text">// built by <span class="ok">tobias radkovský</span> · 2026<span class="footer-cursor" aria-hidden="true"></span></span>
+    <span class="footer-text">index.html <span class="ok">· EOF</span></span>
+  </div>
+</footer>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ── Certificate modal ── -->
+<div class="cert-overlay" id="certOverlay" role="dialog" aria-modal="true" aria-label="Certificate viewer">
   <div class="cert-backdrop" id="certBackdrop"></div>
   <div class="cert-modal" id="certModal">
-    <button class="cert-close" id="certClose" aria-label="Close">✕</button>
+    <div class="win-bar">
+      <span class="win-dots"><span class="win-dot r"></span><span class="win-dot y"></span><span class="win-dot g"></span></span>
+      <span class="win-title">cert_viewer.py — <span id="certModalFile">certificate</span></span>
+      <button class="cert-close" id="certClose" aria-label="Close">✕</button>
+    </div>
     <img class="cert-modal-thumb" id="certModalThumb" src="" alt="" />
     <div class="cert-modal-body">
       <p class="cert-modal-title" id="certModalTitle"></p>
       <p class="cert-modal-issuer" id="certModalIssuer"></p>
       <div class="cert-modal-divider"></div>
       <p class="cert-modal-desc" id="certModalDesc"></p>
-      <p class="cert-modal-cert-label">// certificate</p>
+      <p class="cert-modal-cert-label">certificate</p>
       <img class="cert-modal-cert-img" id="certModalCertImg" src="" alt="Certificate" />
     </div>
   </div>
 </div>
- 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="section-header reveal">
-      <span class="section-num">04</span>
-      <span class="section-title">contact</span>
-      <div class="section-line"></div>
-    </div>
-    <p class="reveal" style="font-size:14px; color: var(--text-2); margin-bottom: 24px; max-width: 490px; line-height: 1.8;">
-      I'm always open to interesting projects and <span class="about-highlight">part time jobs!</span>
-      I am primarily looking for oppurtunities which would advance my skills and experience and develop my current knowledge.
-    </p>
-    <div class="contact-row reveal">
-      <a href="https://github.com/yourusername" class="contact-link" target="_blank">
-        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        github/PyToby
-      </a>
-      <a href="mailto:toby.radkovsky@gmail.com" class="contact-link">
-        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-        toby.radkovsky@gmail.com
-      </a>
-    </div>
-  </section>
- 
-</div>
- 
-<footer>
-  <div class="footer-inner">
-    <span class="footer-text">// built by Tobias Radkovský · 2026</span>
-    <span class="footer-text">index.html</span>
-  </div>
-</footer>
- 
+
+<script src="static/script.js"></script>
 <script>
-  // ── Binary rain canvas ──
-  const canvas = document.getElementById('binary-canvas');
-  const ctx = canvas.getContext('2d');
- 
-  let cols, drops, fontSize;
- 
-  function resize() {
-    canvas.width  = window.innerWidth;
-    canvas.height = window.innerHeight;
-    fontSize = 13;
-    cols = Math.floor(canvas.width / (fontSize * 0.65));
-    drops = Array.from({ length: cols }, () => Math.random() * -100);
-  }
- 
-  function draw() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.font = `${fontSize}px 'JetBrains Mono', monospace`;
- 
-    for (let i = 0; i < drops.length; i++) {
-      const bit = Math.random() > 0.5 ? '1' : '0';
-      const x = i * (fontSize * 0.65);
-      const y = drops[i] * fontSize;
- 
-      const alpha = 0.15 + Math.random() * 0.25;
-      ctx.fillStyle = `rgba(180, 180, 180, ${alpha})`;
-      ctx.fillText(bit, x, y);
- 
-      if (y > canvas.height && Math.random() > 0.975) {
-        drops[i] = 0;
-      }
-      drops[i] += 0.4 + Math.random() * 0.3;
+(() => {
+  'use strict';
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nowStr = () => new Date(Date.now() + 2 * 3600 * 1000).toISOString().replace('T', ' ').slice(0, 19) + ' UTC+2';
+
+  /* ---------- hero: typed session log ---------- */
+  function startHero() {
+    const lines = Array.from(document.querySelectorAll('.log-line'));
+    const dateLine = document.querySelector('.log-line.date-line');
+    if (dateLine) dateLine.dataset.type = nowStr();
+
+    if (reducedMotion) {
+      lines.forEach((el) => { el.textContent = el.dataset.type || ''; });
+      return;
     }
+
+    let li = 0;
+    function next() {
+      if (li >= lines.length) return;
+      const el = lines[li++];
+      el.classList.add('typing');
+      const full = el.dataset.type || '';
+      let i = 0;
+      (function step() {
+        el.textContent = full.slice(0, ++i);
+        if (i < full.length) setTimeout(step, 22 + Math.random() * 30);
+        else {
+          el.classList.remove('typing');
+          el.classList.add('done');
+          setTimeout(next, 170);
+        }
+      })();
+    }
+    setTimeout(next, 300);
   }
- 
-  resize();
-  window.addEventListener('resize', resize);
-  setInterval(draw, 55);
- 
-  // ── Scroll reveal for sections ──
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
- 
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
- 
-  // ── Staggered skill reveal ──
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const skills = entry.target.querySelectorAll('.skill-item');
-        skills.forEach((skill, i) => {
-          setTimeout(() => {
-            skill.style.transition = `opacity 350ms cubic-bezier(0.23,1,0.32,1), transform 350ms cubic-bezier(0.23,1,0.32,1)`;
-            skill.classList.add('revealed');
-          }, i * 45); // 45ms stagger — tight, not draggy
-        });
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
- 
-  const skillGrid = document.querySelector('.skills-grid');
-  if (skillGrid) skillObserver.observe(skillGrid);
 
-  // ── Certifications data ──
-const certs = [
-  {
-    name:    "Github Foundations",
-    issuer:  "Github · 2026",
-    thumb:   "media/github-foundations.jpeg",
-    certImg: "cert.jpg",
-    desc:    "By finishing this course I have gained the nessecary skills to operate with git in the console and in code editors such as VSCode. I have learned about how does Github itself function and how to utilize it to its maximum."
-  }, {
-    name:    "Presecurity Path",
-    issuer:  "TryHackMe · 2025",
-    thumb:   "media/tryhackme.avif",
-    certImg: "media/presecurity-cert.jpg",
-    desc:    "Through this long course I learned the basics of cybersecurity. Different protocols (UDP, TCP, SSH, FTP...) or for example how the OSI or TCP/IP model works, what are packets and frames and how they function. This path has also taught me about DNS, different record types or about HTTP while explaing everything in great detail. "
-  },
-  
-];
+  if (document.documentElement.classList.contains('booted')) startHero();
+  else window.addEventListener('toby:booted', startHero, { once: true });
 
-// ── Show more ──
-const showMoreBtn = document.getElementById('certShowMore');
-showMoreBtn.addEventListener('click', () => {
-  const hidden = document.querySelectorAll('.cert-card.cert-hidden');
-  hidden.forEach((card, i) => {
-    card.classList.remove('cert-hidden');
-    // stagger the reveal — each pair of cards 60ms apart
-    setTimeout(() => card.classList.add('cert-visible'), i * 60);
+  /* ---------- certifications ---------- */
+  const certs = [
+    {
+      name:    'Github Foundations',
+      issuer:  'Github · 2026',
+      file:    'github-foundations.crt',
+      thumb:   'media/github-foundations.jpeg',
+      certImg: 'media/github-foundations.png',
+      desc:    'By finishing this course I have gained the necessary skills to operate with git in the console and in code editors such as VSCode. I have learned about how does Github itself function and how to utilize it to its maximum.'
+    }, {
+      name:    'Presecurity Path',
+      issuer:  'TryHackMe · 2025',
+      file:    'presecurity-path.crt',
+      thumb:   'media/tryhackme.avif',
+      certImg: 'media/presecurity-cert.jpg',
+      desc:    'Through this long course I learned the basics of cybersecurity. Different protocols (UDP, TCP, SSH, FTP...) or for example how the OSI or TCP/IP model works, what are packets and frames and how they function. This path has also taught me about DNS, different record types or about HTTP while explaining everything in great detail.'
+    }, {
+      name:    'Google AI Essentials',
+      issuer:  'Google',
+      file:    'google-ai-essentials.crt',
+      thumb:   'media/google_ai_essentials.png',
+      certImg: 'media/google_ai_essentials.png',
+      desc:    'An introductory course covering the fundamentals of artificial intelligence — how AI works, its real-world applications, and how to use AI tools responsibly and effectively.'
+    }
+  ];
+
+  const overlay  = document.getElementById('certOverlay');
+  const backdrop = document.getElementById('certBackdrop');
+  const closeBtn = document.getElementById('certClose');
+
+  function openCert(index) {
+    const c = certs[index];
+    document.getElementById('certModalFile').textContent   = c.file;
+    document.getElementById('certModalThumb').src          = c.thumb;
+    document.getElementById('certModalThumb').alt          = c.name + ' logo';
+    document.getElementById('certModalTitle').textContent  = c.name;
+    document.getElementById('certModalIssuer').textContent = c.issuer;
+    document.getElementById('certModalDesc').textContent   = c.desc;
+    document.getElementById('certModalCertImg').src        = c.certImg;
+    document.getElementById('certModalCertImg').alt        = c.name + ' certificate';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeCert() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  const certGrid = document.getElementById('certGrid');
+  certGrid.addEventListener('click', (e) => {
+    const card = e.target.closest('.cert-card');
+    if (card) openCert(+card.dataset.cert);
   });
-  // move button to end and hide it
-  showMoreBtn.style.transition = 'opacity 200ms ease';
-  showMoreBtn.style.opacity = '0';
-  setTimeout(() => showMoreBtn.remove(), 200);
-});
+  certGrid.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const card = e.target.closest('.cert-card');
+      if (card) { e.preventDefault(); openCert(+card.dataset.cert); }
+    }
+  });
 
-// ── Modal ──
-const overlay  = document.getElementById('certOverlay');
-const backdrop = document.getElementById('certBackdrop');
-const closeBtn = document.getElementById('certClose');
+  closeBtn.addEventListener('click', closeCert);
+  backdrop.addEventListener('click', closeCert);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCert(); });
 
-function openCert(index) {
-  const c = certs[index];
-  document.getElementById('certModalThumb').src            = c.thumb;
-  document.getElementById('certModalThumb').alt            = c.name;
-  document.getElementById('certModalTitle').textContent    = c.name;
-  document.getElementById('certModalIssuer').textContent   = c.issuer;
-  document.getElementById('certModalDesc').textContent     = c.desc;
-  document.getElementById('certModalCertImg').src          = c.certImg;
-  document.getElementById('certModalCertImg').alt          = c.name + ' certificate';
-  overlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeCert() {
-  overlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('certGrid').addEventListener('click', e => {
-  const card = e.target.closest('.cert-card');
-  if (card) openCert(+card.dataset.cert);
-});
-
-closeBtn.addEventListener('click', closeCert);
-backdrop.addEventListener('click', closeCert);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCert(); });
-
+  /* ---------- copy email ---------- */
+  const mailBtn = document.getElementById('copy-mail');
+  if (mailBtn) {
+    const email = 'toby.radkovsky@gmail.com';
+    const copied = () => {
+      const label = mailBtn.querySelector('.btn-label');
+      const original = label.textContent;
+      label.textContent = '✓ copied to clipboard';
+      window.showToast('✓ email copied to clipboard');
+      setTimeout(() => { label.textContent = original; }, 1900);
+    };
+    mailBtn.addEventListener('click', () => {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(copied).catch(() => fallback());
+      } else fallback();
+      function fallback() {
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); copied(); }
+        catch (err) { window.showToast('email: toby.radkovsky@gmail.com'); }
+        ta.remove();
+      }
+    });
+  }
+})();
 </script>
- 
+
 </body>
 </html>
